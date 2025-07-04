@@ -1,8 +1,8 @@
-#let's create an intersting entry point for workers when they will reach at office at enter their name for entry 
-# they will be greet by welcome 
+#An entry form for workers 
 import streamlit as st
 st.title("Good morning! welcome to the company")
 st.write("Fill the below information to enter in the office and mark your attendence")
+#to enter their name
 with st.form("office_form"):
     name=st.text_input("Enter your name")
 #to choose job occupation 
@@ -10,7 +10,9 @@ with st.form("office_form"):
     choice=st.selectbox("choose your job type:",options)
 #to choose the time
     time=st.slider("Select the time",6,10)
+#to submit the form
     submitted = st.form_submit_button("Submit")
+#after submission
 if submitted:
         if name:
             st.write(f"Welcome to the office, {name}! Have a great day and focus on your work. Thanks!")
@@ -24,3 +26,4 @@ if submitted:
         else:
             st.warning("you can go back to home and come on time tomorrow ")
         st.write("thanks for filling the information")
+    #type streamlit run entry.py in terminal
